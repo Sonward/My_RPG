@@ -13,9 +13,11 @@ public class HeroTriggersInteract : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == buttonsMask)
+        if (collision.gameObject.layer == 8)
         {
             Debug.Log("You stepped on the button");
         }
+        // Крч всі об'єкти з трігерами будуть мати функцію Interact()
+        //Debug.Log("You stepped on the button");
     }
 }
