@@ -13,6 +13,6 @@ public class WeaponRotateScript : MonoBehaviour
         Vector3 difference = MousePosition - transform.position;
         difference.Normalize();
         float rotation_z = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
+        transform.rotation = Quaternion.Euler(0f, 0f, -rotation_z + 90);
     }
 }
