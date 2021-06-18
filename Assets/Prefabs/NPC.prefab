@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2890622585768276696}
   - component: {fileID: 2890622585768276697}
   - component: {fileID: 2890622585768276698}
-  m_Layer: 6
+  - component: {fileID: 6654957888396511560}
+  m_Layer: 9
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,6 +116,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6654957888396511560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2890622585768276702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93be1eaa1dc43e94ab55096e1ff748f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2890622586002594029
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2890622586002594028}
   - component: {fileID: 2890622586002594027}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: NPC_Head-removebg-preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2890622586768585225}
   - component: {fileID: 2890622586768585224}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Pozan_Torso-removebg-preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
