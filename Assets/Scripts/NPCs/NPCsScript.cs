@@ -5,8 +5,10 @@ using UnityEngine;
 public class NPCsScript : MonoBehaviour
 {
     [SerializeField] private int healthPoints = 10;
+    [SerializeField] private bool isDead = false;
 
     public int Healthpoints { get => healthPoints; set => healthPoints = value; }
+    public bool IsDead { get => isDead; }
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +20,11 @@ public class NPCsScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GetDamage(int damage)
+    {
+        healthPoints -= damage;
+        if (healthPoints<=0) { isDead = true; }
     }
 }
