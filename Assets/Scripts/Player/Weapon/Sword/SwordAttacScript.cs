@@ -23,7 +23,7 @@ public class SwordAttacScript : MonoBehaviour
 
     private void Attack()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + new Vector3(0f, 0.2f, 0f), 2f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + new Vector3(0f, 0.5f, 0f), 2f);
 
         foreach (Collider2D collider in colliders)
         {

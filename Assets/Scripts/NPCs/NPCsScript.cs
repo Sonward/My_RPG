@@ -25,6 +25,7 @@ public class NPCsScript : MonoBehaviour
     public void GetDamage(int damage)
     {
         healthPoints -= damage;
+        Debug.Log("NPC get damage: " + damage);
         if (healthPoints<=0) { isDead = true; Debug.Log("NPC was murdered"); }
     }
 }
