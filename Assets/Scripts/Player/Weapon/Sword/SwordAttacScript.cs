@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwordAttacScript : MonoBehaviour
 {
+    [SerializeField] private int swordDamage = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,19 @@ public class SwordAttacScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
+    }
+
+    private void Attack()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + new Vector3(0f, 0.2f, 0f), 2f);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.gameObject.layer == 9) { collider.gameObject.GetComponent<NPCsScript>().GetDamage(swordDamage); }
+        }
     }
 }
