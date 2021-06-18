@@ -9,7 +9,10 @@ public class HeroMove : MonoBehaviour
 
     private bool walk;
 
-    Vector3 MousePosition3D;
+    private Vector3 mousePosition3D;
+
+    public float Speed { get => speed; }
+    public Vector3 MousePosition3D { get => mousePosition3D; }
 
     // Start is called before the first frame update
     void Start()
@@ -22,17 +25,18 @@ public class HeroMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mousePosition3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition3D.z = transform.position.z;
+
         if (Input.GetMouseButtonDown(1))
         {
-            MousePosition3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            MousePosition3D.z = transform.position.z;
             walk = true;
         }
 
         if (walk)
         {
-            transform.position = Vector3.MoveTowards(transform.position, MousePosition3D, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, mousePosition3D, speed * Time.deltaTime);
         }
-        if (transform.position == MousePosition3D) { walk = false; }
+        if (transform.position == mousePosition3D) { walk = false; }
     }
 }
