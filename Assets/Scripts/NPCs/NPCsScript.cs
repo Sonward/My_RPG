@@ -6,6 +6,7 @@ public class NPCsScript : MonoBehaviour
 {
     [SerializeField] private int healthPoints = 10;
     [SerializeField] private bool isDead = false;
+    [SerializeField] private string talkingText = "Hello";
 
     public int Healthpoints { get => healthPoints; set => healthPoints = value; }
     public bool IsDead { get => isDead; }
@@ -25,8 +26,11 @@ public class NPCsScript : MonoBehaviour
     public void GetDamage(int damage)
     {
         healthPoints -= damage;
-        Debug.Log("NPC get damage: " + damage);
-        if (healthPoints<=0) { Death(); Debug.Log("NPC was murdered"); }
+        //Debug.Log("NPC get damage: " + damage);
+        if (healthPoints<=0) 
+        { 
+            Death(); //Debug.Log("NPC was murdered");
+        }
     }
 
     private void Death()
@@ -35,5 +39,10 @@ public class NPCsScript : MonoBehaviour
         GetComponent<PolygonCollider2D>().enabled = false;
         transform.GetChild(2).gameObject.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);
+    }
+
+    public string Talk()
+    {
+        return talkingText;
     }
 }

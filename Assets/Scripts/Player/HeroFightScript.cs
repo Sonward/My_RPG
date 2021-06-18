@@ -4,31 +4,36 @@ using UnityEngine;
 
 public class HeroFightScript : MonoBehaviour
 {
-    [SerializeField] Camera cam;
+    [SerializeField]private int currentWeapon = -1;
 
-    private float speed;
-    private Rigidbody2D rb;
-    private Vector2 movement;
-    private Vector2 mousePos;
- 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        speed = GetComponent<HeroMove>().Speed;
-        rb = GetComponent<Rigidbody2D>();
-        mousePos = GetComponent<HeroMove>().MousePosition3D;
+        if (Input.GetKeyDown(KeyCode.F)){if (currentWeapon != -1){ ChooseWeapon(-1); }}
+        if (Input.GetKeyDown(KeyCode.Alpha1)) { ChooseWeapon(0); }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) { ChooseWeapon(1); }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-
-        mousePos = GetComponent<HeroMove>().MousePosition3D;
-    }
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    private void ChooseWeapon(int newWeapon)
+    { 
+        if (newWeapon == -1 || newWeapon == currentWeapon)
+        {
+            transform.GetChild(3).GetChild(currentWeapon).gameObject.SetActive(false);
+            currentWeapon = -1;
+        }
+        else
+        {
+            if (currentWeapon != -1)
+            {
+                transform.GetChild(3).GetChild(currentWeapon).gameObject.SetActive(false);
+                transform.GetChild(3).GetChild(newWeapon).gameObject.SetActive(true);
+                currentWeapon = newWeapon;
+            }
+            else
+            {
+                transform.GetChild(3).GetChild(newWeapon).gameObject.SetActive(true);
+                currentWeapon = newWeapon;
+            }
+            
+        }
     }
 }
