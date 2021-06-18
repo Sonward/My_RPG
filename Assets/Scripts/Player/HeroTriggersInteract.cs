@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class HeroTriggersInteract : MonoBehaviour
 {
-    [SerializeField] private LayerMask buttonsMask;
-
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 8)

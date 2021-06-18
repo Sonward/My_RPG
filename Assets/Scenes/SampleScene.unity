@@ -1056,9 +1056,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b397c8fb2836a4d9f872c51028da44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonsMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!50 &969557847
 Rigidbody2D:
   serializedVersion: 4
@@ -1092,7 +1089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1881dcfda9a27554bb78a0c2b3448595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeWeapon: -1
 --- !u!1 &1095958896
 GameObject:
   m_ObjectHideFlags: 0

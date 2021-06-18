@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeroFightScript : MonoBehaviour
 {
-    [SerializeField]private int currentWeapon = -1;
+    private int currentWeapon = -1;
 
     private void Update()
     {
