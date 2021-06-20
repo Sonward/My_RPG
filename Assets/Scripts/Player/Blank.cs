@@ -16,5 +16,27 @@ public class Blank
     private int charisma;
 
     // Abilities
+    // strength
+    private int melee;
+    private int pistols;
+    private int shotguns;
+    private int assault;
 
+    // agility
+    private int speed;
+    private int stealth;
+
+    // endurance
+    private int health;
+    private int stamina;
+
+    // inteligence
+    private int hacking;
+    private int medicine;
+    private int mechanics;
+
+    // charisma
+    private int persuading;
+    private int leadrship;
+    private int manipulation;
 }
