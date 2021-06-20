@@ -12,7 +12,7 @@ public class HeroStatsReadWriteScript : MonoBehaviour
     void Start()
     {
         WriteString();
-        //NewWrite();
+        NewWrite();
         ReadString();
     }
 
@@ -24,47 +24,16 @@ public class HeroStatsReadWriteScript : MonoBehaviour
 
     void WriteString()
     {
-        //StreamWriter writer = new StreamWriter(path, true);
-
-        //writer.WriteLine("Hello");
-        //writer.Close();
-        using (StreamWriter writer = new StreamWriter(path, true))
-        {
-            writer.WriteLine("Hello");
-        }
+        
     }
 
     void NewWrite()
     {
-        //StreamWriter writer = new StreamWriter(path, false);
-
-        //writer.WriteLine("New Hello");
-        //writer.Close();
-        using (StreamWriter writer = new StreamWriter(path, false))
-        {
-            writer.WriteLine("New Hello");
-        }
+        
     }
 
     void ReadString()
     {
-        //StringReader reader = new StringReader(path);
-        //string toDebugLine = reader.ReadToEnd();
-        //Debug.Log(toDebugLine);
-        //reader.Close();
-
-        using (StreamReader reader = new StreamReader(path))
-        {
-            List<string> toDebugLines = new List<string>();
-            string ln;
-            while ((ln = reader.ReadLine()) != null)
-            {
-                toDebugLines.Add(ln);
-            }
-            foreach (string iter in toDebugLines)
-            {
-                Debug.Log(iter);
-            }
-        }
+        
     }
 }
