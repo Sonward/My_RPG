@@ -26,10 +26,11 @@ public class NPCsScript : MonoBehaviour
     public void GetDamage(int damage)
     {
         healthPoints -= damage;
-        //Debug.Log("NPC get damage: " + damage);
+        Debug.Log("NPC get damage: " + damage);
         if (healthPoints<=0) 
         { 
-            Death(); //Debug.Log("NPC was murdered");
+            Death(); 
+            Debug.Log("NPC was murdered");
         }
     }
 
@@ -37,6 +38,7 @@ public class NPCsScript : MonoBehaviour
     {
         isDead = true;
         GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
         transform.GetChild(2).gameObject.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);
     }
