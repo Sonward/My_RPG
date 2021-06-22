@@ -37,6 +37,7 @@ public class AssaultShootScript : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, transform.position - transform.right * 2.5f + transform.up * upCoef, bulletRotation);
         
         bullet.GetComponent<BulletScript>().Damage = damage;
+        bullet.GetComponent<BulletScript>().TargetLayer = 9;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
     }

@@ -48,8 +48,9 @@ public class PistolShootScript : MonoBehaviour
         Transform weapon = GetComponentInParent<Transform>();
         Quaternion bulletRotation = new Quaternion(weapon.rotation.x, weapon.rotation.y, weapon.rotation.z - 90f, weapon.rotation.w);
         GameObject bullet = Instantiate(bulletPrefab, transform.position - transform.right + transform.up * upCoef, bulletRotation);
-        
+
         bullet.GetComponent<BulletScript>().Damage = damage;
+        bullet.GetComponent<BulletScript>().TargetLayer = 9;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
     }

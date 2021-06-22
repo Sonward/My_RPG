@@ -945,10 +945,7 @@ GameObject:
   - component: {fileID: 969557842}
   - component: {fileID: 969557847}
   - component: {fileID: 969557845}
-  - component: {fileID: 969557848}
   - component: {fileID: 969557846}
-  - component: {fileID: 969557849}
-  - component: {fileID: 969557850}
   m_Layer: 6
   m_Name: MainHero
   m_TagString: Untagged
@@ -1079,43 +1076,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &969557848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969557840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1881dcfda9a27554bb78a0c2b3448595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentWeapon: 2
---- !u!114 &969557849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969557840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8667651f2da8a3f489fe4e56717ad6da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &969557850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969557840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1604df1b0dd63184380adeff2ad3aeb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1095958896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1389,7 @@ GameObject:
   - component: {fileID: 1407559237}
   - component: {fileID: 1407559238}
   - component: {fileID: 1407559239}
+  - component: {fileID: 1407559240}
   m_Layer: 0
   m_Name: Shotgun-removebg-preview
   m_TagString: Untagged
@@ -1514,6 +1475,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 969557840}
+--- !u!114 &1407559240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407559236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebfba0e56a39eee44bb718250ac5797a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3486332199600343805, guid: 9348b77c08b5f7b418cd7e6d29fd0a94, type: 3}
+  damage: 2
+  bulletForce: 20
+  reloadTime: 0.15
 --- !u!1 &1497538115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,6 +2127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1904930412}
   - component: {fileID: 1904930413}
+  - component: {fileID: 1904930414}
   m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
@@ -2187,6 +2165,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31fd96b79c50814ba47c587189436aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1904930414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904930411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a57a980c10cdda40810bc9335431eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: -1
 --- !u!1 &1939372510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,7 +2196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1939372511
 Transform:
   m_ObjectHideFlags: 0
