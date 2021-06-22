@@ -1428,6 +1428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1497538116}
   - component: {fileID: 1497538117}
+  - component: {fileID: 1497538119}
   - component: {fileID: 1497538118}
   m_Layer: 6
   m_Name: Sword-removebg-preview
@@ -1514,6 +1515,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 10
+--- !u!114 &1497538119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497538115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 794bb90aa85ca114f8171ee1e6acb1b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  damage: 5
+  bulletForce: 20
+  needReload: 0
+  reloadTime: 0.1
 --- !u!1 &1624747150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,7 +2005,7 @@ GameObject:
   - component: {fileID: 1939372511}
   - component: {fileID: 1939372512}
   - component: {fileID: 1939372513}
-  - component: {fileID: 1939372515}
+  - component: {fileID: 1939372514}
   m_Layer: 6
   m_Name: Pistol-removebg-preview
   m_TagString: Untagged
@@ -2073,7 +2091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 969557840}
---- !u!114 &1939372515
+--- !u!114 &1939372514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2082,7 +2100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1939372510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd7aac87a5a91546b7de19ab72901e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 794bb90aa85ca114f8171ee1e6acb1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3486332199600343805, guid: 9348b77c08b5f7b418cd7e6d29fd0a94, type: 3}
