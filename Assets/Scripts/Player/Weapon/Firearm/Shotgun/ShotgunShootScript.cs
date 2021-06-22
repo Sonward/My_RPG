@@ -24,8 +24,8 @@ public class ShotgunShootScript : MonoBehaviour
             if (reload <= 0f)
             {
                 reload = reloadTime;
-                if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.5f); }
-                else { Shoot(-0.5f); }
+                if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.3f); }
+                else { Shoot(-0.3f); }
             }
         }
     }
@@ -37,7 +37,7 @@ public class ShotgunShootScript : MonoBehaviour
         
         for (int i = 0; i < 8; i++)
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position - transform.right + transform.up * upCoef, bulletRotation);
+            GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right*2 + transform.up * upCoef, bulletRotation);
             bullet.GetComponent<BulletScript>().Damage = damage;
             bullet.GetComponent<BulletScript>().TargetLayer = 9;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
