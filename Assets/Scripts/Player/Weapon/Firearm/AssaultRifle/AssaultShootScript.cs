@@ -24,8 +24,8 @@ public class AssaultShootScript : MonoBehaviour
             if (reload <= 0f)
             {
                 reload = reloadTime;
-                if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.5f); }
-                else { Shoot(-0.5f); }
+                if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.4f); }
+                else { Shoot(-0.4f); }
             }
         }  
     }
@@ -34,7 +34,7 @@ public class AssaultShootScript : MonoBehaviour
     {
         Transform weapon = GetComponentInParent<Transform>();
         Quaternion bulletRotation = new Quaternion(weapon.rotation.x, weapon.rotation.y, weapon.rotation.z - 90f, weapon.rotation.w);
-        GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right * 2 + transform.up * upCoef, bulletRotation);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position - transform.right * 2.5f + transform.up * upCoef, bulletRotation);
         
         bullet.GetComponent<BulletScript>().Damage = damage;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
