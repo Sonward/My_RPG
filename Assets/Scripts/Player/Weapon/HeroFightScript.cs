@@ -11,6 +11,8 @@ public class HeroFightScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F)){if (currentWeapon != -1){ ChooseWeapon(-1); }}
         if (Input.GetKeyDown(KeyCode.Alpha1)) { ChooseWeapon(0); }
         if (Input.GetKeyDown(KeyCode.Alpha2)) { ChooseWeapon(1); }
+        if (Input.GetKeyDown(KeyCode.Alpha3)) { ChooseWeapon(2); }
+        if (Input.GetKeyDown(KeyCode.Alpha4)) { ChooseWeapon(3); }
     }
 
     private void ChooseWeapon(int newWeapon)
