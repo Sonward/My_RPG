@@ -33,15 +33,19 @@ public class ShotgunShootScript : MonoBehaviour
     void Shoot(float upCoef)
     {
         Transform weapon = GetComponentInParent<Transform>();
-        Quaternion bulletRotation = new Quaternion(weapon.rotation.x, weapon.rotation.y, weapon.rotation.z - 90f, weapon.rotation.w);
-        
+        //Quaternion bulletRotation = new Quaternion(weapon.rotation.x, weapon.rotation.y, weapon.rotation.z - 90f, weapon.rotation.w);
+
+        float angleForOneBullet = 10f / 8f;
+
+        Debug.Log(transform.right);
+
         for (int i = 0; i < 8; i++)
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right*2 + transform.up * upCoef, bulletRotation);
+            GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right*2 + transform.up * upCoef, weapon.rotation * Quaternion.Euler(0, 0, -90));
             bullet.GetComponent<BulletScript>().Damage = damage;
             bullet.GetComponent<BulletScript>().TargetLayer = 9;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
+            rb.AddForce(transform.right * bulletForce + new Vector3(transform.right.x * angleForOneBullet * i, transform.right.y * angleForOneBullet * (1 - i), 0f), ForceMode2D.Impulse);
         }
     }
 }

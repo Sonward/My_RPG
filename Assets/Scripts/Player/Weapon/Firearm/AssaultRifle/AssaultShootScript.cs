@@ -33,8 +33,7 @@ public class AssaultShootScript : MonoBehaviour
     void Shoot(float upCoef)
     {
         Transform weapon = GetComponentInParent<Transform>();
-        Quaternion bulletRotation = new Quaternion(weapon.rotation.x, weapon.rotation.y, weapon.rotation.z - 90f, weapon.rotation.w);
-        GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right * 2.2f + transform.up * upCoef, bulletRotation);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right * 2.2f + transform.up * upCoef, weapon.rotation * Quaternion.Euler(0, 0, -90));
         
         bullet.GetComponent<BulletScript>().Damage = damage;
         bullet.GetComponent<BulletScript>().TargetLayer = 9;

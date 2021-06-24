@@ -46,10 +46,7 @@ public class PistolShootScript : MonoBehaviour
     void Shoot(float upCoef)
     {
         Transform weapon = GetComponentInParent<Transform>();
-        //Quaternion bulletRotation = new Quaternion(weapon.rotation.x, weapon.rotation.y, weapon.rotation.z, weapon.rotation.w);
-        //Debug.Log("Weapon Rotation: " + weapon.rotation + "Bullet Rotation: " + bulletRotation);
         GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right * 2 + transform.up * upCoef, weapon.rotation * Quaternion.Euler(0, 0, -90));
-        Debug.Log("Weapon Rotation: " + weapon.rotation + "Bullet Rotation: " + weapon.rotation * Quaternion.Euler(0, 0, -90));
 
         bullet.GetComponent<BulletScript>().Damage = damage;
         bullet.GetComponent<BulletScript>().TargetLayer = 9;
