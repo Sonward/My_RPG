@@ -1508,7 +1508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1497538116
 Transform:
   m_ObjectHideFlags: 0
@@ -1587,6 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 10
+  attackWavePrefab: {fileID: 1740713623075357219, guid: f624b0933b92f0b4fb7361ceddca3f49, type: 3}
 --- !u!1 &1624747150
 GameObject:
   m_ObjectHideFlags: 0

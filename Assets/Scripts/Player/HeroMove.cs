@@ -27,11 +27,12 @@ public class HeroMove : MonoBehaviour
         mousePosition3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition3D.z = transform.position.z;
 
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
+        //rb.velocity = movement.normalized * speed;
     }
 }
