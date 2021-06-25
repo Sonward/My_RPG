@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class NPCsDialogsScript : MonoBehaviour
 {
-    [SerializeField] private string talkingText = "Hello";
+    [SerializeField] private string[] talkingText = new string[] { "Hello", "GET OUT FROM HERE!!!" } ;
 
     public string Talk()
     {
-        return talkingText;
+        if (GetComponent<NPCsAI>().FightMode)
+        {
+            Debug.Log("Figth mode is active; FightMode = " + GetComponent<NPCsAI>().FightMode);
+            return talkingText[1];
+        }
+        else
+        {
+            Debug.Log("Figth mode isn't active; FightMode = " + GetComponent<NPCsAI>().FightMode);
+            return talkingText[0];
+        }
     }
 }

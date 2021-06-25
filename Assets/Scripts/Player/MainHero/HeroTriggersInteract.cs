@@ -12,7 +12,7 @@ public class HeroTriggersInteract : MonoBehaviour
         }
         if (collision.gameObject.layer == 9)
         {
-            Debug.Log(collision.gameObject.GetComponent<NPCsScript>().Talk());
+            collision.GetComponent<NPCsAI>().GetDialog();
         }
         // Крч всі об'єкти з трігерами будуть мати функцію Interact()
         //Debug.Log("You stepped on the button");

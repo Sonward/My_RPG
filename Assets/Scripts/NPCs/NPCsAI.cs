@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class NPCsAI : MonoBehaviour
 {
-    private GameObject player;
-    private bool fightMode = false;
+    private Transform player;
+    private bool fightMode;
     enum FightStates { dontFight, fight }
     FightStates previousState;
     FightStates currentState;
+
+    public bool FightMode { get => fightMode; }
+
+    public Transform Player { get => player; }
 
     // Start is called before the first frame update
     void Start()
     {
         currentState =  FightStates.dontFight;
+        fightMode = false;
     }
 
     // Update is called once per frame
@@ -22,7 +27,7 @@ public class NPCsAI : MonoBehaviour
         if (Physics2D.OverlapCircle(transform.position, 20, 1 << 6) != null)
         {
             Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, 20, 1 << 6);
-            player = playerCollider.gameObject;
+            player = playerCollider.transform;
         }
         else
         {
@@ -47,6 +52,7 @@ public class NPCsAI : MonoBehaviour
             transform.GetChild(4).gameObject.SetActive(true);
             transform.GetChild(3).gameObject.SetActive(true);
             transform.GetChild(0).gameObject.SetActive(false);
+            GetComponent<NPCsFightScript>().enabled = true;
             fightMode = true;
         }
         else 
@@ -54,7 +60,13 @@ public class NPCsAI : MonoBehaviour
             transform.GetChild(4).gameObject.SetActive(false);
             transform.GetChild(3).gameObject.SetActive(false);
             transform.GetChild(0).gameObject.SetActive(true);
+            GetComponent<NPCsFightScript>().enabled = false;
             fightMode = false; 
         }
+    }
+
+    public void GetDialog()
+    {
+        Debug.Log(GetComponent<NPCsDialogsScript>().Talk());
     }
 }

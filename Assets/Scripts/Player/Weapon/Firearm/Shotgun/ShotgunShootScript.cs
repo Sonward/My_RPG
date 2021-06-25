@@ -21,14 +21,15 @@ public class ShotgunShootScript : MonoBehaviour
     private void Update()
     {
         if (reload > 0) { reload -= Time.deltaTime; }
-        if (Input.GetButtonDown("Fire1"))
+    }
+
+    public void Attack()
+    {
+        if (reload <= 0f)
         {
-            if (reload <= 0f)
-            {
-                reload = reloadTime;
-                if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.3f); }
-                else { Shoot(-0.3f); }
-            }
+            reload = reloadTime;
+            if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.3f); }
+            else { Shoot(-0.3f); }
         }
     }
 

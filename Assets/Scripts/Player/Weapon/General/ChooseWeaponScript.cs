@@ -23,6 +23,8 @@ public class ChooseWeaponScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) { ChooseWeapon(1); }
         if (Input.GetKeyDown(KeyCode.Alpha3)) { ChooseWeapon(2); }
         if (Input.GetKeyDown(KeyCode.Alpha4)) { ChooseWeapon(3); }
+
+        Attack();
     }
 
     private void ChooseWeapon(int newWeapon)
@@ -46,6 +48,37 @@ public class ChooseWeaponScript : MonoBehaviour
                 currentWeapon = newWeapon;
             }
 
+        }
+    }
+
+    private void Attack() // Убер костильний метод, чим по швидше треба буде глянути до наслідування тута і зробити нормально через батьківський клас "Зброя"
+    {
+        switch (currentWeapon)
+        {
+            case 0:
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    transform.GetChild(currentWeapon).GetComponent<SwordAttacScript>().Attack();
+                }   
+                break;
+            case 1:
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    transform.GetChild(currentWeapon).GetComponent<PistolShootScript>().Attack();
+                }
+                break;
+            case 2:
+                if (Input.GetButton("Fire1"))
+                {
+                    transform.GetChild(currentWeapon).GetComponent<AssaultShootScript>().Attack();
+                }
+                break;
+            case 3:
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    transform.GetChild(currentWeapon).GetComponent<ShotgunShootScript>().Attack();
+                }
+                break;
         }
     }
 }

@@ -28,5 +28,6 @@ public class NPCsStatusScript : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         transform.GetChild(2).gameObject.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(3).gameObject.SetActive(false);
     }
 }

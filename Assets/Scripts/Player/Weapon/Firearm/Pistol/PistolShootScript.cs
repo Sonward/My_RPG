@@ -21,6 +21,11 @@ public class PistolShootScript : MonoBehaviour
 
     private void Update()
     {
+        //Attack();
+    }
+
+    public void Attack()
+    {
         if (needReload)
         {
             if (reload > 0) { reload -= Time.deltaTime; }
@@ -36,16 +41,12 @@ public class PistolShootScript : MonoBehaviour
         }
         else
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.5f); }
-                else { Shoot(-0.5f); }
-            }
+            if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.5f); }
+            else { Shoot(-0.5f); }
         }
-        
     }
 
-    void Shoot(float upCoef)
+    private void Shoot(float upCoef)
     {
         Transform weapon = GetComponentInParent<Transform>();
         GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right * 2 + transform.up * upCoef, weapon.rotation * Quaternion.Euler(0, 0, -90));

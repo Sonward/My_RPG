@@ -21,15 +21,16 @@ public class AssaultShootScript : MonoBehaviour
     private void Update()
     {
         if (reload > 0) { reload -= Time.deltaTime; }
-        if (Input.GetButton("Fire1"))
+    }
+
+    public void Attack()
+    {
+        if (reload <= 0f)
         {
-            if (reload <= 0f)
-            {
-                reload = reloadTime;
-                if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.4f); }
-                else { Shoot(-0.4f); }
-            }
-        }  
+            reload = reloadTime;
+            if (GetComponent<SpriteRenderer>().flipY == false) { Shoot(0.4f); }
+            else { Shoot(-0.4f); }
+        }
     }
 
     void Shoot(float upCoef)

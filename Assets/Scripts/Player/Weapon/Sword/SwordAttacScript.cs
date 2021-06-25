@@ -18,13 +18,13 @@ public class SwordAttacScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Attack();
-        }
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    Attack();
+        //}
     }
 
-    private void Attack()
+    public void Attack()
     {
         GameObject attackWave = Instantiate(attackWavePrefab, transform.position, transform.rotation, transform);
 
@@ -34,7 +34,7 @@ public class SwordAttacScript : MonoBehaviour
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.gameObject.layer == TargetLayer) { collider.gameObject.GetComponent<NPCsScript>().GetDamage(swordDamage); }
+            if (collider.gameObject.layer == TargetLayer) { collider.gameObject.GetComponent<NPCsStatusScript>().GetDamage(swordDamage); }
         }
     }
 }
