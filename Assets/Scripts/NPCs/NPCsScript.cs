@@ -37,7 +37,7 @@ public class NPCsScript : MonoBehaviour
     private void Death()
     {
         isDead = true;
-        //GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
         transform.GetChild(2).gameObject.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);

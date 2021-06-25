@@ -18,7 +18,7 @@ public class BulletScript : MonoBehaviour
         {
             if (collision.gameObject.layer != 9 && collision.gameObject.layer != 10)
             {
-                if (collision.gameObject.layer == 6) { /* TODO*/ }
+                if (collision.gameObject.layer == 6) { collision.gameObject.GetComponent<HeroStatus>().HeroGetDamage(Damage); }
                 Destroy(gameObject);
             }
         }
