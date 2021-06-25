@@ -12,6 +12,8 @@ public class ShotgunShootScript : MonoBehaviour
     // reloading // maybe will be useful
     [SerializeField] float reloadTime = 0.15f;
 
+    public int TargetLayer { get; set; }
+
     float reload;
 
     private void Start() { reload = 0; }
@@ -43,7 +45,7 @@ public class ShotgunShootScript : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right*2 + transform.up * upCoef, weapon.rotation * Quaternion.Euler(0, 0, -90));
             bullet.GetComponent<BulletScript>().Damage = damage;
-            bullet.GetComponent<BulletScript>().TargetLayer = 9;
+            bullet.GetComponent<BulletScript>().TargetLayer = TargetLayer;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(transform.right * bulletForce + new Vector3(transform.right.x * angleForOneBullet * i, transform.right.y * angleForOneBullet * (1 - i), 0f), ForceMode2D.Impulse);
         }

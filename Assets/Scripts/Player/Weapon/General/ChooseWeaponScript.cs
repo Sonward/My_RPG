@@ -6,6 +6,13 @@ public class ChooseWeaponScript : MonoBehaviour
 {
     [SerializeField] private int currentWeapon = -1;
 
+    private void Start()
+    {
+        transform.GetChild(1).gameObject.GetComponent<PistolShootScript>().TargetLayer = 9;
+        transform.GetChild(2).gameObject.GetComponent<AssaultShootScript>().TargetLayer = 9;
+        transform.GetChild(3).gameObject.GetComponent<ShotgunShootScript>().TargetLayer = 9;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F)) { if (currentWeapon != -1) { ChooseWeapon(-1); } }
