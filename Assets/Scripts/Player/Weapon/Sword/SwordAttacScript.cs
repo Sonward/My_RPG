@@ -7,6 +7,8 @@ public class SwordAttacScript : MonoBehaviour
     [SerializeField] private int swordDamage = 10;
     [SerializeField] private GameObject attackWavePrefab;
 
+    public int TargetLayer { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class SwordAttacScript : MonoBehaviour
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.gameObject.layer == 9) { collider.gameObject.GetComponent<NPCsScript>().GetDamage(swordDamage); }
+            if (collider.gameObject.layer == TargetLayer) { collider.gameObject.GetComponent<NPCsScript>().GetDamage(swordDamage); }
         }
     }
 }

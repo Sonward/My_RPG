@@ -5,10 +5,12 @@ using UnityEngine;
 public class ChooseWeaponScript : MonoBehaviour
 {
     [SerializeField] private int currentWeapon = -1;
-    [SerializeField] private int targetLayer = 9;
+    //[SerializeField] private int targetLayer = 9;
+    private int targetLayer = 9;
 
     private void Start()
     {
+        transform.GetChild(0).gameObject.GetComponent<SwordAttacScript>().TargetLayer = targetLayer;
         transform.GetChild(1).gameObject.GetComponent<PistolShootScript>().TargetLayer = targetLayer;
         transform.GetChild(2).gameObject.GetComponent<AssaultShootScript>().TargetLayer = targetLayer;
         transform.GetChild(3).gameObject.GetComponent<ShotgunShootScript>().TargetLayer = targetLayer;
