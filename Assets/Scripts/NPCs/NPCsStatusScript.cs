@@ -29,5 +29,6 @@ public class NPCsStatusScript : MonoBehaviour
         transform.GetChild(2).gameObject.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(3).gameObject.SetActive(false);
+        transform.GetChild(4).gameObject.SetActive(false);
     }
 }
